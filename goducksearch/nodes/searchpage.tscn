@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/searchbar.gd" type="Script" id=1]
+[ext_resource path="res://scripts/pagecontrol.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.101961, 0.0941176, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.133333, 0.12549, 0.137255, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="Theme" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutButton" type="Button" parent="Panel"]
+anchor_right = 1.0
+margin_left = 30.0
+margin_top = 28.0
+margin_right = -30.0
+margin_bottom = 50.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "GoDuck Abstract Search"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchor_right = 1.0
+margin_left = 30.0
+margin_top = 60.0
+margin_right = -30.0
+margin_bottom = 84.0
+placeholder_text = "Type here to search . . ."
+caret_blink = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="LineEdit"]
+
+[node name="titleLabel" type="RichTextLabel" parent="LineEdit"]
+anchor_right = 1.0
+margin_top = 40.0
+margin_bottom = 60.0
+text = "Heading"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="contentLabel" type="RichTextLabel" parent="LineEdit"]
+anchor_right = 1.0
+margin_top = 60.0
+margin_bottom = 218.0
+text = "Abstract"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sourceLabel" type="RichTextLabel" parent="LineEdit"]
+anchor_right = 1.0
+margin_top = 230.0
+margin_bottom = 250.0
+text = "AbstractSource"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="urlLabel" type="RichTextLabel" parent="LineEdit"]
+anchor_right = 1.0
+margin_top = 250.0
+margin_bottom = 270.0
+text = "AbstractURL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.694
+anchor_right = 1.0
+margin_top = 60.0
+margin_right = -30.0
+margin_bottom = 84.0
+text = "Quick Search"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+margin_left = 216.0
+margin_top = 107.0
+margin_right = 600.0
+margin_bottom = 307.0
+theme = SubResource( 4 )
+custom_colors/title_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+custom_constants/title_height = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="WindowDialog"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 16.0
+margin_right = -10.0
+margin_bottom = 146.0
+text = "GoDuck is a quick search tool that uses DuckDuckGo search API built using Godot Engine.
+
+Made by abiyasamusyafa, Ziva Hanifa, Tamara Duarsa.
+
+
+
+Version 1.0 March 2021"
+
+[node name="source" type="Button" parent="WindowDialog"]
+anchor_right = 0.5
+margin_left = 10.0
+margin_top = 149.0
+margin_right = -10.0
+margin_bottom = 181.0
+text = "source code"
+
+[node name="close" type="Button" parent="WindowDialog"]
+anchor_left = 0.474
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 149.0
+margin_right = -10.0
+margin_bottom = 181.0
+text = "close this window"
+[connection signal="pressed" from="Panel/AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="text_entered" from="LineEdit" to="LineEdit" method="_on_LineEdit_text_entered"]
+[connection signal="request_completed" from="LineEdit/HTTPRequest" to="LineEdit" method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="Button" to="LineEdit" method="_on_Button_pressed"]
+[connection signal="pressed" from="WindowDialog/source" to="." method="_on_source_pressed"]
+[connection signal="pressed" from="WindowDialog/close" to="." method="_on_close_pressed"]
