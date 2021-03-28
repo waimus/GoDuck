@@ -11,7 +11,7 @@ Using Godot Engine version 3.2.3 stable official (Steam). May work using other G
 
 ## Screenshots
 
-TODO
+![screenshot](./images/goduckgodot.png)
 
 ## Downloads
 
