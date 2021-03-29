@@ -1,10 +1,9 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scripts/searchbar.gd" type="Script" id=1]
 [ext_resource path="res://scripts/pagecontrol.gd" type="Script" id=2]
 [ext_resource path="res://styles/textbox_style.tres" type="StyleBox" id=3]
 [ext_resource path="res://styles/button_style.tres" type="StyleBox" id=4]
-[ext_resource path="res://styles/panel_style.tres" type="StyleBox" id=5]
 [ext_resource path="res://styles/button_focus_style.tres" type="StyleBox" id=6]
 [ext_resource path="res://styles/button_hover_style.tres" type="StyleBox" id=7]
 [ext_resource path="res://fonts/FiraSans-Book.otf" type="DynamicFontData" id=8]
@@ -50,6 +49,30 @@ size = 14
 use_filter = true
 font_data = ExtResource( 8 )
 
+[sub_resource type="DynamicFont" id=29]
+size = 11
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=30]
+content_margin_left = 10.0
+bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 0.588235 )
+corner_radius_top_left = 4
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 4
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color( 0, 0, 0, 0.152941 )
+shadow_size = 12
+
 [sub_resource type="StyleBoxFlat" id=5]
 content_margin_left = 10.0
 bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
@@ -66,7 +89,7 @@ expand_margin_left = 1.0
 expand_margin_right = 1.0
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color( 0, 0, 0, 0.152941 )
+shadow_color = Color( 0, 0, 0, 0.0392157 )
 shadow_size = 12
 
 [sub_resource type="StyleBoxFlat" id=6]
@@ -251,7 +274,25 @@ expand_margin_bottom = 5.0
 [sub_resource type="Theme" id=20]
 
 [sub_resource type="StyleBoxFlat" id=21]
-bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+bg_color = Color( 0.239216, 0.239216, 0.239216, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 30.0
+expand_margin_bottom = 10.0
+shadow_color = Color( 0, 0, 0, 0.309804 )
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -266,17 +307,12 @@ expand_margin_right = 9.0
 expand_margin_top = 29.0
 expand_margin_bottom = 9.0
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=23]
 size = 12
 use_filter = true
 extra_spacing_top = -1
 extra_spacing_bottom = -1
 extra_spacing_space = 1
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=23]
-size = 12
-use_filter = true
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=24]
@@ -289,12 +325,17 @@ size = 12
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="DynamicFont" id=26]
+size = 12
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 border_width_top = 1
 border_color = Color( 1, 1, 1, 0.313726 )
 
-[sub_resource type="StyleBoxFlat" id=27]
+[sub_resource type="StyleBoxFlat" id=28]
 bg_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -337,10 +378,10 @@ anchor_bottom = 1.0
 custom_styles/panel = SubResource( 3 )
 
 [node name="AboutButton" type="Button" parent="panel-background"]
-anchor_left = 0.933
-anchor_right = 1.0
-margin_top = 2.0
-margin_right = -7.0
+anchor_right = 1.003
+margin_left = 673.76
+margin_top = 7.0
+margin_right = -9.16003
 margin_bottom = 40.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/focus = ExtResource( 6 )
@@ -360,6 +401,41 @@ custom_styles/panel = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SearchButton" type="Button" parent="panel-background"]
+visible = false
+anchor_right = 1.003
+margin_left = 565.0
+margin_top = 7.0
+margin_right = -57.0
+margin_bottom = 40.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 29 )
+text = "Instant Search"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="outline" type="Panel" parent="panel-background/SearchButton"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="panel-background"]
+visible = false
+anchor_right = 1.003
+margin_left = 14.0
+margin_top = 13.0
+margin_right = -167.0
+margin_bottom = 33.0
+custom_styles/normal = SubResource( 30 )
 
 [node name="LineEdit" type="LineEdit" parent="."]
 anchor_right = 1.0
@@ -479,7 +555,7 @@ margin_top = 62.0
 margin_right = 591.0
 margin_bottom = 291.0
 theme = SubResource( 20 )
-custom_styles/panel = ExtResource( 5 )
+custom_styles/panel = SubResource( 21 )
 custom_colors/title_color = Color( 1, 1, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -488,7 +564,7 @@ __meta__ = {
 [node name="outline" type="Panel" parent="WindowDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 21 )
+custom_styles/panel = SubResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -499,7 +575,7 @@ margin_left = 10.0
 margin_top = -11.0
 margin_right = -10.0
 margin_bottom = 150.0
-custom_fonts/normal_font = SubResource( 22 )
+custom_fonts/normal_font = SubResource( 23 )
 text = "GoDuck is a quick search tool that uses DuckDuckGo Instant Answer API built using Godot Engine.
 
 Made by abiyasamusyafa, Ziva Hanifa, Tamara Duarsa.
@@ -522,7 +598,7 @@ margin_bottom = 181.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
 text = "See source code"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -548,7 +624,7 @@ margin_bottom = 181.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 25 )
 text = "See license"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -570,7 +646,7 @@ margin_bottom = 220.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 text = "Close this window"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -588,7 +664,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -25.0
-custom_styles/panel = SubResource( 26 )
+custom_styles/panel = SubResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -598,7 +674,7 @@ show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 27 )
+custom_styles/panel = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
