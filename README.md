@@ -1,5 +1,5 @@
 # GoDuck
-Quick and basic implementation of [DuckDuckGo *Instant Search* API](https://duckduckgo.com/api) using Godot Engine and GDScript. This does not use the full search result from DuckDuckGo. In an okay-ish state at the moment.
+Quick and basic implementation of [DuckDuckGo *Instant Answer* API](https://duckduckgo.com/api) using Godot Engine and GDScript. This does not use the full search result from DuckDuckGo. In an okay-ish state at the moment.
 
 ## WHY?
 Biggest question on earth about this project. Well I don't know, if it's not because I need to make a program for class project about "information", I wouldn't create a program related to search engine. Why would anyone make or even use a 'search engine desktop client' when the search engine works better on browser.
@@ -26,7 +26,7 @@ Using Godot Engine version 3.2.3 stable official (Steam). May work using other G
 Check out the [release page](https://github.com/waimus/GoDuck/releases).
 
 ## Usage Guide
-Type any keyword on the search bar and press enter or by clicking the "instant search" button. GoDuck allows several commands which started with prefix `!`, those are:
+Type any keyword on the search bar and press enter or by clicking the "Instant Answer" button. GoDuck allows several commands which started with prefix `!`, those are:
 * `!related`: Some search result may directly show a Wikipedia summary. Use `!related` next to your keyword to show DuckDuckGo results instead.
 * `!clear`: Clear the content text.
 * `!quit` and `!exit`: Quit GoDuck.

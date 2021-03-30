@@ -2,6 +2,9 @@ extends Control
 
 onready var popup_window = $WindowDialog
 
+func _init():
+	OS.min_window_size = Vector2(320, 480)
+
 # This script controls the about window.
 func _on_AboutButton_pressed():
 	popup_window.set_title("About")
