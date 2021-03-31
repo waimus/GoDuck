@@ -9,10 +9,13 @@ var related = false
 
 # nodes
 onready var content_label = $"/root/Control/contentLabel"
-onready var url_label = $"/root/Control/urlButton"
+onready var url_label = $"/root/Control/panel-background/panel-topbar/urlButton"
 
 func _ready():
 	grab_focus()
+	var touch_screen = OS.has_touchscreen_ui_hint()
+	if touch_screen: url_label.set_text("GoDuck running on " + OS.get_name() + " with touch screen support")
+	else: url_label.set_text("GoDuck running on " + OS.get_name() + " without touch screen")
 
 func _search_request():
 	# get text from the LineEdit which this script is attached to
@@ -52,13 +55,13 @@ func _print_results(json):
 		# print the informations
 		content_label.set_text(paragraph_format)
 		source_link = json["AbstractURL"]
-		url_label.set_text(source_link + "  (open in browser)")
+		url_label.set_text(source_link + "  (open in web browser)")
 	# if not, use 'related topics' queries. It's an array of results
 	elif json["RelatedTopics"].size() > 0:
 		var topic_counts = (json["RelatedTopics"].size())
 		content_label.set_text("")
 		content_label.set_text("Results from DuckDuckGo:\n\n")
-		url_label.set_text(source_link + "  (open in browser)")
+		url_label.set_text(source_link + "  (open in web browser)")
 		# Exposing array of results from JSON
 		for n in topic_counts:
 			# check if the first array member "FirstURL" exists, then go that way
@@ -85,7 +88,7 @@ func _print_results(json):
 	# if nothing found, give up your life and cry
 	else:
 		content_label.set_text("The ducks were unable to find anything related to the query :(")
-		url_label.set_text(source_link + "  (open in browser)")
+		url_label.set_text(source_link + "  (open in web browser)")
 
 # called when enter button is pressed while the searchbox is active
 func _on_LineEdit_text_entered(new_text):
@@ -103,6 +106,6 @@ func _on_Button_pressed():
 
 # URL button pressed
 func _on_urlButton_pressed():
-	if source_link != "":
+	if source_link != "" or not "http" in source_link:
 		print(source_link)
 		OS.shell_open(source_link)

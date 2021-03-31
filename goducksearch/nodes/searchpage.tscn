@@ -1,9 +1,10 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scripts/searchbar.gd" type="Script" id=1]
 [ext_resource path="res://scripts/pagecontrol.gd" type="Script" id=2]
 [ext_resource path="res://styles/textbox_style.tres" type="StyleBox" id=3]
 [ext_resource path="res://styles/button_style.tres" type="StyleBox" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://styles/button_focus_style.tres" type="StyleBox" id=6]
 [ext_resource path="res://styles/button_hover_style.tres" type="StyleBox" id=7]
 [ext_resource path="res://fonts/FiraSans-Book.otf" type="DynamicFontData" id=8]
@@ -11,7 +12,7 @@
 [ext_resource path="res://styles/outlin-style.tres" type="StyleBox" id=10]
 [ext_resource path="res://styles/richtextbox_style.tres" type="StyleBox" id=11]
 
-[sub_resource type="StyleBoxFlat" id=30]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.235294, 0.235294, 0.235294, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -32,7 +33,7 @@ shadow_size = 15
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 border_width_bottom = 1
-border_color = Color( 1, 1, 1, 0.447059 )
+border_color = Color( 1, 1, 1, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -44,7 +45,7 @@ size = 14
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.588235, 0.756863, 0.917647, 0.729412 )
 border_width_left = 1
 border_width_top = 1
@@ -58,7 +59,7 @@ expand_margin_right = 2.0
 expand_margin_top = 6.0
 expand_margin_bottom = 6.0
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.184314, 0.184314, 0.184314, 1 )
 border_width_left = 2
 border_width_top = 1
@@ -72,7 +73,7 @@ expand_margin_right = 2.0
 expand_margin_top = 6.0
 expand_margin_bottom = 6.0
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.192157, 0.192157, 0.192157, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -86,12 +87,12 @@ expand_margin_right = 1.0
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=8]
 size = 11
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 1 )
 border_color = Color( 1, 1, 1, 1 )
 corner_radius_top_right = 4
@@ -101,7 +102,7 @@ expand_margin_right = 1.0
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=10]
 content_margin_left = 10.0
 bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
 border_width_left = 1
@@ -117,7 +118,7 @@ expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 shadow_color = Color( 0, 0, 0, 0.0392157 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 5
 corner_radius_bottom_left = 5
@@ -127,38 +128,6 @@ expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id=12]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
-border_width_left = 1
-border_width_top = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color( 0, 0.407843, 1, 1 )
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-shadow_color = Color( 0, 0, 0, 0.309804 )
-
-[sub_resource type="DynamicFont" id=13]
-size = 14
-use_mipmaps = true
-use_filter = true
-extra_spacing_space = 2
-font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0, 0, 0, 1 )
-draw_center = false
-border_width_top = 3
-border_width_bottom = 3
-border_color = Color( 0, 0, 0, 1 )
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id=15]
 content_margin_left = 10.0
 bg_color = Color( 0.588235, 0.756863, 0.917647, 0.729412 )
 border_width_left = 1
@@ -175,7 +144,7 @@ expand_margin_right = 1.0
 expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=13]
 content_margin_left = 10.0
 bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 border_width_left = 1
@@ -192,7 +161,7 @@ expand_margin_right = 1.0
 expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=14]
 content_margin_left = 10.0
 bg_color = Color( 0.176471, 0.176471, 0.176471, 1 )
 border_width_left = 1
@@ -209,7 +178,7 @@ expand_margin_right = 1.0
 expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=15]
 content_margin_left = 10.0
 bg_color = Color( 0.192157, 0.192157, 0.192157, 1 )
 border_width_left = 1
@@ -226,10 +195,42 @@ expand_margin_right = 1.0
 expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=16]
 size = 11
 use_filter = true
 font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color( 0.27451, 0.27451, 0.27451, 1 )
+border_width_left = 2
+border_width_top = 4
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color( 0, 0.407843, 1, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color( 0, 0, 0, 0.309804 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 14
+use_mipmaps = true
+use_filter = true
+extra_spacing_space = 2
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0, 0, 0, 1 )
+draw_center = false
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
 
 [sub_resource type="Theme" id=20]
 
@@ -318,14 +319,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.37841
 margin_right = -2.37842
-custom_styles/panel = SubResource( 30 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="panel-topbar" type="Panel" parent="panel-background"]
 anchor_right = 1.005
-margin_bottom = 55.0
+margin_bottom = 90.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -349,9 +350,9 @@ margin_right = -15.0
 margin_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 0
-focus_neighbour_bottom = NodePath("../../../contentLabel")
-focus_next = NodePath("../../../contentLabel")
-focus_previous = NodePath("../searchBar/Search-Button")
+focus_neighbour_bottom = NodePath("../urlButton")
+focus_next = NodePath("../urlButton")
+focus_previous = NodePath("../Search-Button")
 custom_styles/hover = ExtResource( 7 )
 custom_styles/focus = ExtResource( 6 )
 custom_styles/normal = ExtResource( 4 )
@@ -376,16 +377,16 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -152.0
 margin_top = 18.0
-margin_right = -60.0
+margin_right = -58.0
 margin_bottom = 37.0
 grow_horizontal = 0
-focus_neighbour_bottom = NodePath("../../../contentLabel")
+focus_neighbour_bottom = NodePath("../urlButton")
 focus_next = NodePath("../AboutButton")
 focus_previous = NodePath("../searchBar")
-custom_styles/hover = SubResource( 7 )
-custom_styles/focus = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 10 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "    Instant Aswer    "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -396,22 +397,22 @@ show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 11 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="searchBar" type="LineEdit" parent="panel-background/panel-topbar"]
 anchor_right = 1.0
-margin_left = 15.0
+margin_left = 17.0
 margin_top = 18.0
 margin_right = -155.0
 margin_bottom = 37.0
 focus_neighbour_right = NodePath("../Search-Button")
-focus_neighbour_bottom = NodePath("../../../contentLabel")
+focus_neighbour_bottom = NodePath("../urlButton")
 focus_next = NodePath("../Search-Button")
-focus_previous = NodePath("../../../urlButton")
-custom_styles/focus = SubResource( 5 )
+focus_previous = NodePath("../../../contentLabel")
+custom_styles/focus = SubResource( 10 )
 custom_styles/normal = ExtResource( 3 )
 custom_fonts/font = ExtResource( 9 )
 placeholder_text = "Type here to search . . ."
@@ -428,20 +429,55 @@ show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 6 )
+custom_styles/panel = SubResource( 11 )
+
+[node name="TextureButton" type="TextureButton" parent="panel-background/panel-topbar/searchBar"]
+anchor_right = 1.0
+anchor_bottom = 1.053
+
+[node name="urlButton" type="Button" parent="panel-background/panel-topbar"]
+anchor_right = 1.0
+margin_left = 17.3784
+margin_top = 50.0
+margin_right = -15.0
+margin_bottom = 75.0
+focus_neighbour_top = NodePath("../searchBar")
+focus_next = NodePath("../../../contentLabel")
+focus_previous = NodePath("../AboutButton")
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
+text = "AbstractURL"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="panel-background/panel-topbar/urlButton"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="contentLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 80.0
-margin_bottom = -95.0
-focus_neighbour_top = NodePath("../panel-background/panel-topbar/searchBar")
-focus_next = NodePath("../urlButton")
-focus_previous = NodePath("../panel-background/panel-topbar/searchBar")
+margin_top = 87.0
+margin_bottom = -25.0
+focus_neighbour_top = NodePath("../panel-background/panel-topbar/urlButton")
+focus_next = NodePath("../panel-background/panel-topbar/searchBar")
+focus_previous = NodePath("../panel-background/panel-topbar/urlButton")
 focus_mode = 2
-custom_styles/focus = SubResource( 12 )
+custom_styles/focus = SubResource( 17 )
 custom_styles/normal = ExtResource( 11 )
-custom_fonts/normal_font = SubResource( 13 )
+custom_fonts/normal_font = SubResource( 18 )
 text = "# GoDuck
 Quick and basic implementation of DuckDuckGo Instant Search API using Godot Engine and GDScript. This does not use the full search result from DuckDuckGo. In an okay-ish state at the moment.
 
@@ -464,43 +500,23 @@ anchor_bottom = 1.0
 margin_top = 1.0
 margin_bottom = -1.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="urlButton" type="Button" parent="."]
-anchor_top = 1.0
+[node name="imageResult" type="TextureRect" parent="contentLabel"]
+visible = false
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 30.0
-margin_top = -75.0
-margin_right = -30.0
-margin_bottom = -50.0
-focus_neighbour_top = NodePath("../contentLabel")
-focus_next = NodePath("../panel-background/panel-topbar/searchBar")
-focus_previous = NodePath("../contentLabel")
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/font = SubResource( 19 )
-text = "AbstractURL"
-clip_text = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="urlButton"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-custom_styles/panel = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -150.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = 150.0
+grow_horizontal = 0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 margin_left = 46.4879
@@ -535,7 +551,7 @@ Made by abiyasamusyafa, Ziva Hanifa, Tamara Duarsa.
 
 
 
-Version 2.2 March 2021
+Version 2.3 March 2021
 Licensed under the MIT License"
 fit_content_height = true
 __meta__ = {
@@ -644,7 +660,8 @@ valign = 1
 [connection signal="pressed" from="panel-background/panel-topbar/Search-Button" to="panel-background/panel-topbar/searchBar" method="_on_Button_pressed"]
 [connection signal="text_entered" from="panel-background/panel-topbar/searchBar" to="panel-background/panel-topbar/searchBar" method="_on_LineEdit_text_entered"]
 [connection signal="request_completed" from="panel-background/panel-topbar/searchBar/HTTPRequest" to="panel-background/panel-topbar/searchBar" method="_on_HTTPRequest_request_completed"]
-[connection signal="pressed" from="urlButton" to="panel-background/panel-topbar/searchBar" method="_on_urlButton_pressed"]
+[connection signal="pressed" from="panel-background/panel-topbar/searchBar/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="panel-background/panel-topbar/urlButton" to="panel-background/panel-topbar/searchBar" method="_on_urlButton_pressed"]
 [connection signal="pressed" from="WindowDialog/source" to="." method="_on_source_pressed"]
 [connection signal="pressed" from="WindowDialog/license" to="." method="_on_license_pressed"]
 [connection signal="pressed" from="WindowDialog/close" to="." method="_on_close_pressed"]

@@ -14,12 +14,11 @@ Using Godot Engine version 3.2.3 stable official (Steam). May work using other G
 * Load the `project.godot` file in the `goducksearch` folder.
 
 ## Screenshots
-### Wikipedia summary
-![screenshot](./images/goduck-abstract.png)
-### DuckDuckGo search result
-![screenshot](./images/goduck-related.png)
+#### GoDuck running on linux X11, HTML5, and HTML5 mobile
+![screenshot](./images/goduck23.png)
 
 ## Downloads
+* [Try this on your browser](https://waimus.github.io/goduckweb/)
 * [Linux x86_64](https://github.com/waimus/GoDuck/releases/download/v2.1.0/goduck-2.1-29_march_2021-linux_x86-64.zip)
 * [Windows](https://github.com/waimus/GoDuck/releases/download/v2.1.0/goduck-2.1-29_march_2021-windows.zip)
 
