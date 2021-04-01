@@ -19,8 +19,8 @@ Using Godot Engine version 3.2.3 stable official (Steam). May work using other G
 
 ## Downloads
 * [Try this on your browser](https://waimus.github.io/goduckweb/)
-* [Linux x86_64](https://github.com/waimus/GoDuck/releases/download/v2.1.0/goduck-2.3-1_april_2021-linux-x86_64)
-* [Windows](https://github.com/waimus/GoDuck/releases/download/v2.1.0/goduck-2.3-1_april_2021-windows.zip)
+* [Linux x86_64](https://github.com/waimus/GoDuck/releases/download/2.3.0/goduck-2.3-1_april_2021-linux-x86_64.zip)
+* [Windows](https://github.com/waimus/GoDuck/releases/download/2.3.0/goduck-2.3-1_april_2021-windows.zip)
 
 Check out the [release page](https://github.com/waimus/GoDuck/releases).
 
