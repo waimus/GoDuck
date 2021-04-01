@@ -12,10 +12,15 @@ onready var content_label = $"/root/Control/contentLabel"
 onready var url_label = $"/root/Control/panel-background/panel-topbar/urlButton"
 
 func _ready():
+	# activates the searchbar immediately on ready.
 	grab_focus()
-	var touch_screen = OS.has_touchscreen_ui_hint()
-	if touch_screen: url_label.set_text("GoDuck running on " + OS.get_name() + " with touch screen support")
-	else: url_label.set_text("GoDuck running on " + OS.get_name() + " without touch screen")
+	# touchscreen check for UI scaling preference
+	if OS.has_touchscreen_ui_hint(): 
+		url_label.set_text("GoDuck running on " + OS.get_name() + " with touch screen support")
+		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D, SceneTree.STRETCH_ASPECT_EXPAND, Vector2(480,640), 1)
+	else: 
+		url_label.set_text("GoDuck running on " + OS.get_name() + " without touch screen")
+		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_DISABLED, SceneTree.STRETCH_ASPECT_IGNORE , Vector2(480,640), 1)
 
 func _search_request():
 	# get text from the LineEdit which this script is attached to
@@ -28,7 +33,6 @@ func _search_request():
 	
 	# allows quitting and clearing from the search bar
 	if query == "!exit" or query == "!quit":
-		print ("quitting")
 		get_tree().quit()
 	elif query == "!clear":
 		content_label.set_text("")
@@ -48,12 +52,10 @@ func _print_results(json):
 	# if the summary/"Abstract" result is available, or user doesn't prompt "!related", use this
 	if "Abstract" in json and json["Abstract"] != "" and not related:
 		# assigning the informations
-		var topic_heading = json["Heading"]
-		var topic_abstract = json["Abstract"]
-		var abstract_source = json["AbstractSource"]
-		var paragraph_format = "\"" + topic_heading + "\"\n\n" + topic_abstract + " (" + abstract_source + ")"
+		var data = [json["Heading"], json["Abstract"], json["AbstractSource"]]
+		var paragraph_format = "\"%s\"\n\n%s (%s)"
 		# print the informations
-		content_label.set_text(paragraph_format)
+		content_label.set_text(paragraph_format % data)
 		source_link = json["AbstractURL"]
 		url_label.set_text(source_link + "  (open in web browser)")
 	# if not, use 'related topics' queries. It's an array of results
@@ -67,24 +69,20 @@ func _print_results(json):
 			# check if the first array member "FirstURL" exists, then go that way
 			if "FirstURL" in json["RelatedTopics"][n]:
 				# assigning the informations
-				var refered_url = json["RelatedTopics"][n]["FirstURL"]
-				var text_content = json["RelatedTopics"][n]["Text"]
-				var paragraph_format = "[" + (n + 1) as String + "]" + " " + refered_url + "\n" + text_content +"\n\n\n"
+				var data = [String(n + 1), json["RelatedTopics"][n]["FirstURL"], json["RelatedTopics"][n]["Text"]]
+				var paragraph_format = "[%s] %s\n%s\n\n"
 				# print the informations
-				content_label.set_text(content_label.get_text() + paragraph_format)
+				content_label.set_text(content_label.get_text() + paragraph_format % data)
 			# There may be another array of results under specific topic inside the same array.
 			# checks it by looking up if array member "Name" exist instead of "FirstURL"
 			elif "Name" in json["RelatedTopics"][n]:
 				# Array member "Topics" contains another arrays.
 				for m in json["RelatedTopics"][n]["Topics"].size():
 					# assigning informations
-					var topic_name = json["RelatedTopics"][n]["Name"]
-					var refered_url = json["RelatedTopics"][n]["Topics"][m]["FirstURL"]
-					var text_content = json["RelatedTopics"][n]["Topics"][m]["Text"]
-					var paragraph_format = "[" + String(n + 1) + "." + String(m + 1) + "]" + " (" + topic_name + ") " + refered_url + "\n" + text_content +"\n\n\n"
+					var data = [String(n + 1), String(m + 1), json["RelatedTopics"][n]["Topics"][m]["FirstURL"], json["RelatedTopics"][n]["Name"], json["RelatedTopics"][n]["Topics"][m]["Text"]]
+					var paragraph_format = "[%s.%s] %s\n%s - %s\n\n"
 					# print the informations
-					content_label.set_text(content_label.get_text() + paragraph_format)
-		
+					content_label.set_text(content_label.get_text() + paragraph_format % data)
 	# if nothing found, give up your life and cry
 	else:
 		content_label.set_text("The ducks were unable to find anything related to the query :(")
@@ -107,5 +105,4 @@ func _on_Button_pressed():
 # URL button pressed
 func _on_urlButton_pressed():
 	if source_link != "" or not "http" in source_link:
-		print(source_link)
 		OS.shell_open(source_link)

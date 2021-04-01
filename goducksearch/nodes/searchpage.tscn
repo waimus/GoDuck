@@ -478,17 +478,17 @@ focus_mode = 2
 custom_styles/focus = SubResource( 17 )
 custom_styles/normal = ExtResource( 11 )
 custom_fonts/normal_font = SubResource( 18 )
-text = "# GoDuck
-Quick and basic implementation of DuckDuckGo Instant Search API using Godot Engine and GDScript. This does not use the full search result from DuckDuckGo. In an okay-ish state at the moment.
+text = "GoDuck is a quick and basic implementation of DuckDuckGo Instant Answer API using Godot Engine and GDScript. This does not use the full search result from DuckDuckGo.
 
-## Usage Guide
-Type any keyword on the search bar and press enter or by clicking the \"instant search\" button. GoDuck allows several commands which started with prefix !, those are:
+# Guide
+Type any keyword on the search bar and press enter or by clicking the \"Instant Answer\" button. 
+GoDuck allows several commands which started with prefix !, those are:
 * !related: Some search result may directly show a Wikipedia summary. Use !related next to your keyword to show DuckDuckGo results instead.
 * !clear: Clear the content text.
 * !quit and !exit: Quit GoDuck.
 
-## License
-This project is licensed under the MIT license."
+# License
+This project is licensed under the MIT License."
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -551,7 +551,7 @@ Made by abiyasamusyafa, Ziva Hanifa, Tamara Duarsa.
 
 
 
-Version 2.3 March 2021
+Version 2.3 April 2021
 Licensed under the MIT License"
 fit_content_height = true
 __meta__ = {
