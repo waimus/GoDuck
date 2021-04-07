@@ -14,7 +14,7 @@ Using Godot Engine version 3.2.3 stable official (Steam). May work using other G
 * Load the `project.godot` file in the `goducksearch` folder.
 
 ## Screenshots
-#### GoDuck running on linux X11, HTML5, and HTML5 mobile
+#### GoDuck running on Linux X11, HTML5 (Chromium on desktop), and HTML5 (Firefox Android)
 ![screenshot](./images/goduck23.png)
 
 ## Downloads
@@ -34,6 +34,7 @@ Type any keyword on the search bar and press enter or by clicking the "Instant A
 * This project is licensed under the [MIT license](https://github.com/waimus/GoDuck/blob/main/LICENSE).
 
 ## Credits
+* This project was made in collaboration with Ziva Hanifa and Tamara Duarsa as part of project team.
+* This project uses [DuckDuckGo Instant Answer API](https://duckduckgo.com/api)
 * This project uses Fira Sans Book font ([SIL OPEN FONT LICENSE Version 1.1](https://github.com/bBoxType/FiraSans/blob/master/OFL.txt))
 * This project may show Wikipedia content ([CC BY-SA 3.0](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License))
-* This project uses [DuckDuckGo Instant Answer API](https://duckduckgo.com/api)
