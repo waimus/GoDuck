@@ -1,17 +1,17 @@
 extends LineEdit
 
 # variables
-var url_head = "https://api.duckduckgo.com/?q="
-var query = ""
-var url_params = "&format=json&pretty=1"
-var source_link = ""
-var related = false
+var url_head : String = "https://api.duckduckgo.com/?q="
+var query : String = ""
+var url_params : String = "&format=json&pretty=1"
+var source_link : String = ""
+var related : bool = false
 
 # nodes
-onready var content_label = $"/root/Control/contentLabel"
-onready var url_label = $"/root/Control/panel-background/panel-topbar/urlButton"
+onready var content_label : RichTextLabel = $"/root/Control/contentLabel"
+onready var url_label : Button = $"/root/Control/panel-background/panel-topbar/urlButton"
 
-func _ready():
+func _ready() -> void:
 	# activates the searchbar immediately on ready.
 	grab_focus()
 	# touchscreen check for UI scaling preference
@@ -22,7 +22,7 @@ func _ready():
 		url_label.set_text("GoDuck running on " + OS.get_name() + " without touch screen")
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_DISABLED, SceneTree.STRETCH_ASPECT_IGNORE , Vector2(480,640), 1)
 
-func _search_request():
+func _search_request() -> void:
 	# get text from the LineEdit which this script is attached to
 	query = get_text()
 	# check to pick related results only
@@ -46,7 +46,7 @@ func _search_request():
 		source_link = url_head + query + url_params
 		$HTTPRequest.request(source_link)
 
-func _print_results(json):
+func _print_results(json) -> void:
 	# if the summary/"Abstract" result is available, or user doesn't prompt "!related", use this
 	if "Abstract" in json and json["Abstract"] != "" and not related:
 		# assigning the informations
@@ -87,20 +87,20 @@ func _print_results(json):
 		url_label.set_text(source_link + "  (open in web browser)")
 
 # called when enter button is pressed while the searchbox is active
-func _on_LineEdit_text_entered(new_text):
+func _on_LineEdit_text_entered(new_text) -> void:
 	_search_request()
 	
 # request search json completed
-func _on_HTTPRequest_request_completed( result, response_code, headers, body ):
+func _on_HTTPRequest_request_completed( result, response_code, headers, body ) -> void:
 	# parse JSON
 	var json_result = JSON.parse(body.get_string_from_utf8()).result
 	_print_results(json_result)
 	
 # Search button pressed
-func _on_Button_pressed():
+func _on_Button_pressed() -> void:
 	_search_request()
 
 # URL button pressed
-func _on_urlButton_pressed():
+func _on_urlButton_pressed() -> void:
 	if source_link != "" or not "http" in source_link:
 		OS.shell_open(source_link)
