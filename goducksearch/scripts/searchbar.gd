@@ -39,9 +39,6 @@ func _search_request():
 		content_label.set_text("")
 	# check if the search box is not empty
 	elif query != "":
-		# sometimes the connection can be slow by OS, confusing user if this is working or not.
-		# this is a way to inform user that the program is working when it is silently trying to connect to the internet.
-		# I just don't know how to implement loading bar which would be more natural.
 		content_label.set_text("Attempting to retrieve data . . .")
 		# convert the query to the URL-friendly format
 		query = query.percent_encode()
