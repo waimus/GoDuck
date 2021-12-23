@@ -23,7 +23,6 @@ func _ready() -> void:
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_DISABLED, SceneTree.STRETCH_ASPECT_IGNORE , Vector2(480,640), 1)
 
 func _search_request() -> void:
-	# get text from the LineEdit which this script is attached to
 	query = get_text()
 	# check to pick related results only
 	if "!related" in query:
