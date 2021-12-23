@@ -29,7 +29,8 @@ func _search_request():
 	if "!related" in query:
 		related = true
 		query = query.replace("!related", "")
-	else: related = false
+	else: 
+		related = false
 	
 	# allows quitting and clearing from the search bar
 	if query == "!exit" or query == "!quit":
